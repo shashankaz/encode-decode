@@ -12,7 +12,7 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "authorization",
+						"key": "x_api_key",
 						"value": "123456789",
 						"type": "text"
 					}
@@ -46,7 +46,7 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "authorization",
+						"key": "x_api_key",
 						"value": "123456789",
 						"type": "text"
 					}

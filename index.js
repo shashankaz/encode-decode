@@ -15,11 +15,11 @@ app.get("/", (req, res) => {
 });
 
 const auth = (req, res, next) => {
-  const { authorization } = req.headers;
+  const { x_api_key } = req.headers;
 
-  if (authorization === process.env.x_api_key) {
+  if (x_api_key === process.env.x_api_key) {
     next();
-  } else if (authorization !== process.env.x_api_key) {
+  } else if (x_api_key !== process.env.x_api_key) {
     res.status(401).json({
       message: "Please provide a valid API key",
     });
@@ -37,14 +37,14 @@ const auth = (req, res, next) => {
  *     apiKeyAuth:
  *       type: apiKey
  *       in: header
- *       name: x-api-key
+ *       name: x_api_key
  *   schemas:
  *     EncodeRequest:
  *       type: object
  *       required:
  *         - text
  *       properties:
- *         text:
+ *         input:
  *           type: string
  *           description: The plain text to encode
  *     DecodeRequest:
@@ -52,7 +52,7 @@ const auth = (req, res, next) => {
  *       required:
  *         - encodedText
  *       properties:
- *         encodedText:
+ *         input:
  *           type: string
  *           description: The Base64 encoded text
  */
@@ -78,7 +78,7 @@ const auth = (req, res, next) => {
  *             schema:
  *               type: object
  *               properties:
- *                 encodedText:
+ *                 output:
  *                   type: string
  */
 
@@ -120,7 +120,7 @@ app.post("/encode", auth, (req, res) => {
  *             schema:
  *               type: object
  *               properties:
- *                 decodedText:
+ *                 output:
  *                   type: string
  */
 
