@@ -1,0 +1,19 @@
+{
+  "name": "task-1",
+  "version": "1.0.0",
+  "description": "A simple API for Base64 encoding and decoding of text, secured with an API key",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Shashank",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
